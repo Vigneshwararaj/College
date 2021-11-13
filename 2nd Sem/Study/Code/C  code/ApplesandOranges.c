@@ -1,0 +1,34 @@
+#include<stdio.h>
+int main(){
+    int s,t,a,b,m,n,i,count1,count2,c[100],d[100],e,f;
+    scanf("%d",&s);
+    scanf("%d",&t);
+    scanf("%d",&a);
+    scanf("%d",&b);
+    scanf("%d",&m);
+    scanf("%d\n",&n);
+    for(i=0;i<m;i++){
+        scanf("%d",&c[i]);
+    }
+    for(i=0;i<n;i++){
+        scanf("%d",&d[i]);
+    }
+    count1=0;
+    for(i=0;i<m;i++){
+        e=0;
+        e=a+c[i];
+        if(e>=s&&e<=t){
+            count1=count1+1;
+        }
+    }
+    count2=0;
+    for(i=0;i<n;i++){
+        f=0;
+        f=b+d[i];
+        if(f>=s&&f<=t){
+            count2=count2+1;
+        }
+    }
+    printf("%d\n",count1);
+    printf("%d",count2);
+}

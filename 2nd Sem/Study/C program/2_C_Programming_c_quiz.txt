@@ -1,0 +1,174 @@
+#include <stdio.h>
+void main()
+{
+char cnt=0;
+for(;cnt++;printf("%d",cnt)) ;
+printf("%d",cnt);
+}
+
+0 1 2 ... infinite times
+0 1 2 ... 127
+0
+*1
+1
+Before entering into the for loop the CHECK CONDITION is "evaluated". Here it evaluates to 0 (false) and comes out of the loop, and i is incremented (note the semicolon after the for loop).
+
+#include < stdio.h >
+int main()
+{
+    int tally=0;
+    for(;;)
+    {
+        if(tally==10)
+            break;
+        printf("%d ",++tally);
+    }
+    return 0;
+}
+
+0 1 2 3 4 5 6 7 8 9 10
+0 1 2 3 ... infinite times
+*1 2 3 4 5 6 7 8 9 10
+1 2 3 4 5 6 7 8 9
+
+#include <stdio.h>
+void main()
+{
+    int tally;
+    for(tally=0;tally<10;++tally)
+    {
+        printf("#");
+        if(tally>6)
+            continue;
+        printf("%d",tally);
+    }
+}  
+
+*#0#1#2#3#4#5#6###
+#0#1#2#3#4#5#6#7#8#9#10
+#0#1#2#3#4#5##7#8#9#10
+#0#1#2#3#4#5#
+
+#include <stdio.h>
+void main()
+{
+    int i,j,charVal='A';
+ 
+    for(i=5;i>=1;i--)
+    {
+        for(j=0;j< i;j++)
+            printf("%c ",(charVal+j));
+        printf("\n");
+    }
+}
+
+A B C D E
+A B C D E
+A B C D E
+A B C D E
+A B C D E
+        
+A B C D
+A B C D
+A B C D
+A B C D
+        
+A B C D
+A B C
+A B
+A
+   
+ANS     
+A B C D E
+A B C D
+A B C
+A B
+A
+
+#include <stdio.h>
+void main()
+{
+    int cnt=1;
+    do
+    {
+        printf("%d,",cnt);
+        cnt+=1;
+    }while(cnt>=10);
+    printf("\nAfter loop cnt=%d",cnt);
+    printf("\n");
+}
+
+1.After loop cnt=1
+*2.1,
+After loop cnt=2
+3.After loop cnt=2
+
+#include <stdio.h>
+int main()
+{
+    int i=1;
+    while(i<=10 && 1++)
+        printf("Hello");
+}
+
+*Error: lvalue required as increment operand
+HelloHello ... 10 times
+HelloHello ... 11 times
+Hello
+
+#include <stdio.h>
+#define TRUE 1
+int main()
+{
+    int loop=10;
+    while(printf("Hello ") && loop--);
+}
+
+Hello
+Hello Hello Hello Hello ... (Infinite times)
+Hello Hello Hello Hello Hello Hello Hello Hello Hello Hello (10 times)
+*Hello Hello Hello Hello Hello Hello Hello Hello Hello Hello Hello (11 times)
+
+#include <stdio.h>
+int main()
+{
+    float a,b;
+    a=3.0;
+    b=4.0;
+    printf("%.0f,%.1f,%.2f",a/b,a/b,a/b);
+    return 0;
+}
+
+*1,0.8,0.75
+0,0.7,0.75
+0,0.8,0.75
+ERROR: Invalid format specifier
+
+#include<stdio.h>
+
+int main()
+{
+    float a=3.15529;
+    printf("%2.1f\n", a);
+    return 0;
+}
+
+A.	3.00
+B.	3.15
+*C.	3.2
+D.	3
+
+
+#include<stdio.h>
+
+int main()
+{
+    int a=250;
+    printf("%1d\n", a);
+    return 0;
+}
+
+A.	1250
+B.	2
+C.	50
+*D.	250
