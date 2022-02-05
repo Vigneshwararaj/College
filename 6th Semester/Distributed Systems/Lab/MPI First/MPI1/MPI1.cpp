@@ -39,7 +39,7 @@ int main(int argc, char** argv)
 
 
         for (i = 0; i < rows; i++) {
-            array[i] = (i + 1)*(i+1);
+            array[i] = (i + 1) * (i + 1);
         }
 
 
@@ -66,7 +66,7 @@ int main(int argc, char** argv)
             sum += array[i];
         }
 
-        printf("the sum %i calculated by root process is \n", sum);
+        printf("The sum %i is calculated by root process  \n", sum);
 
 
         for (an_id = 1; an_id < procs; an_id++) {
@@ -76,20 +76,20 @@ int main(int argc, char** argv)
 
             sender = status.MPI_SOURCE;
 
-            printf("The Partial sum %i returned from process is %i\n", partial_sum, sender);
+            printf("The Partial sum %i is calculated by process  %i\n", partial_sum, sender);
 
             sum += partial_sum;
         }
 
-        printf("The total sum  is: %i\n", sum);
+        printf("The total sum obtained after adding all Partial Sum is: %i\n", sum);
     }
 
     else {
 
-   
 
-            MPI_Recv(&rows_receive, 1, MPI_INT,
-                0, send_data_tag, MPI_COMM_WORLD, &status);
+
+        MPI_Recv(&rows_receive, 1, MPI_INT,
+            0, send_data_tag, MPI_COMM_WORLD, &status);
 
         MPI_Recv(&array2, rows_receive, MPI_INT,
             0, send_data_tag, MPI_COMM_WORLD, &status);
@@ -109,3 +109,5 @@ int main(int argc, char** argv)
     }
     MPI_Finalize();
 }
+
+
